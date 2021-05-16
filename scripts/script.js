@@ -31,7 +31,3 @@ let mainPage = document.querySelector('header h1');
 mainPage.addEventListener('click', () => {
   setState({name: 'mainPage'});
 });
-
-window.onpopstate = function(event){
-  setState(event.state);
-};
