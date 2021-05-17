@@ -1,2 +1,3 @@
 # Lab7_Solution
-https://akcheu.github.io/Lab7/
+Authors: Allen Cheung
+Website: https://akcheu.github.io/Lab7/
