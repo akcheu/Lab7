@@ -3,12 +3,13 @@
 
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
 const setState = router.setState;
+const settings = {name: 'settings'};
+const mainPage = {name: 'mainPage'};
 let postNum = 1;
 
 // Make sure you register your service worker here too
+history.pushState(mainPage, '', '');
 document.addEventListener('DOMContentLoaded', () => {
-  const settings = {name: 'settings'};
-  const mainPage = {name: 'mainPage'};
   fetch('https://cse110lab6.herokuapp.com/entries')
     .then(response => response.json())
     .then(entries => {
@@ -26,18 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let settingIcon = document.querySelector('header img');
       settingIcon.addEventListener('click', () => {
-        if (history.state.name != 'settings') {
-          history.pushState(settings, '', 'settings');
-          setState(settings);
-        }
+        history.pushState(settings, '', 'settings');
+        setState(settings);
       });
 
       let menuBar = document.querySelector('header h1');
       menuBar.addEventListener('click', () => {
-        if (history.state.name != 'mainPage'){
-          history.pushState(mainPage, '', '');
-          setState(mainPage);
-        }
+        history.pushState(mainPage, '', '');
+        setState(mainPage);
       });
     });
 });
