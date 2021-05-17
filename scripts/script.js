@@ -40,5 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('popstate', (event) => {
-  setState(event.state);
+  if (event.state == null) 
+    setState(mainPage);
+  else 
+    setState(event.state);
 });
