@@ -1,3 +1,4 @@
+// Allen Cheung | CSE 110 | Lab 7
 // script.js
 
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let menuBar = document.querySelector('header h1');
       menuBar.addEventListener('click', () => {
         if (history.state.name != 'mainPage'){
-          history.pushState(mainPage, '', location.origin);
+          history.pushState(mainPage, '', '');
           setState(mainPage);
         }
       });
