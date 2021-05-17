@@ -1,10 +1,8 @@
-// Allen Cheung | CSE 110 | Lab 7
 // script.js
 
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
 const setState = router.setState;
 let postNum = 1;
-
 
 // Make sure you register your service worker here too
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         newPost.id = postNum;
         postNum++;
         newPost.addEventListener('click', () => {
-          if (history.state.name != 'entry') {
             history.pushState({name: 'entry', id: newPost.id}, '', 'entry#' + newPost.id);
             setState({name: 'entry', id: newPost.id});
-          }
         });
         document.querySelector('main').appendChild(newPost);
       });

@@ -1,4 +1,3 @@
-// Allen Cheung | CSE 110 | Lab 7
 // router.js
 
 export const router = {};
